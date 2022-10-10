@@ -2,8 +2,10 @@ package hotel.management.system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Dashboard extends JFrame {
+public class Dashboard extends JFrame implements ActionListener {
     public Dashboard() {
         setBounds(0, 0, 1550, 1000);
         setLayout(null);
@@ -32,6 +34,7 @@ public class Dashboard extends JFrame {
         mb.add(hotel);
 
         JMenuItem reception = new JMenuItem("RECEPTION");
+        reception.addActionListener(this);
         hotel.add(reception);
 
         JMenu admin = new JMenu("ADMIN");
@@ -39,12 +42,15 @@ public class Dashboard extends JFrame {
         mb.add(admin);
 
         JMenuItem addEmployee = new JMenuItem("ADD EMPLOYEE");
+        addEmployee.addActionListener(this);
         admin.add(addEmployee);
 
         JMenuItem addRoom = new JMenuItem("ADD ROOM");
+        addRoom.addActionListener(this);
         admin.add(addRoom);
 
         JMenuItem addDriver = new JMenuItem("ADD DRIVER");
+        addDriver.addActionListener(this);
         admin.add(addDriver);
 
         setVisible(true);
@@ -52,5 +58,16 @@ public class Dashboard extends JFrame {
 
     public static void main(String[] args) {
         new Dashboard();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getActionCommand().equals("ADD EMPLOYEE")) {
+            new AddEmployee();
+        }
+
+        if (ae.getActionCommand().equals("ADD ROOM")) {
+            new AddRoom();
+        }
     }
 }
