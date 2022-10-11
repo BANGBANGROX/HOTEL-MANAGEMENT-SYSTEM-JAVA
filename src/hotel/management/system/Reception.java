@@ -2,8 +2,10 @@ package hotel.management.system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Reception extends JFrame {
+public class Reception extends JFrame implements ActionListener {
     private final JButton btnNewCustomer;
     private final JButton btnRooms;
     private final JButton btnDepartments;
@@ -24,6 +26,7 @@ public class Reception extends JFrame {
         btnNewCustomer.setBounds(10, 30, 200, 30);
         btnNewCustomer.setBackground(Color.BLACK);
         btnNewCustomer.setForeground(Color.WHITE);
+        btnNewCustomer.addActionListener(this);
         add(btnNewCustomer);
 
         btnRooms = new JButton("Rooms");
@@ -104,5 +107,14 @@ public class Reception extends JFrame {
 
     public static void main(String[] args) {
         new Reception();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        setVisible(false);
+
+        if (ae.getSource() == btnNewCustomer) {
+            new AddCustomer();
+        }
     }
 }
