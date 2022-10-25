@@ -151,5 +151,9 @@ public class Reception extends JFrame implements ActionListener {
         if (ae.getSource() == btnSearchRoom) {
             new SearchRoom();
         }
+
+        if (ae.getSource() == btnUpdate) {
+            new UpdateCheck();
+        }
     }
 }
