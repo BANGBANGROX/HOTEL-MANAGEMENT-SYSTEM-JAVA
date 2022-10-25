@@ -7,14 +7,14 @@ import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import net.proteanit.sql.*;
 
-public class Room extends JFrame implements ActionListener {
+public class EmployeeInfo extends JFrame implements ActionListener {
     private final JTable table;
     private final JButton back;
 
     private void fetchData() {
         try {
             Conn c = new Conn();
-            String query = "SELECT * FROM Room";
+            String query = "SELECT * FROM Employee";
             ResultSet rs = c.s.executeQuery(query);
             table.setModel(DbUtils.resultSetToTableModel(rs));
         }
@@ -23,38 +23,43 @@ public class Room extends JFrame implements ActionListener {
         }
     }
 
-    public Room() {
+    public EmployeeInfo() {
         setLayout(null);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/eight.jpg"));
-        Image i2 = i1.getImage().getScaledInstance(600, 600, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
-        JLabel image = new JLabel(i3);
-        image.setBounds(500, 0, 600, 600);
-        add(image);
-
-        JLabel l1 = new JLabel("Room Number");
-        l1.setBounds(10, 10, 100, 20);
+        JLabel l1 = new JLabel("Name");
+        l1.setBounds(40, 10, 100, 20);
         add(l1);
 
-        JLabel l2 = new JLabel("Availability");
-        l2.setBounds(120, 10, 100, 20);
+        JLabel l2 = new JLabel("Age");
+        l2.setBounds(170, 10, 100, 20);
         add(l2);
 
-        JLabel l3 = new JLabel("Status");
-        l3.setBounds(230, 10, 100, 20);
+        JLabel l3 = new JLabel("Gender");
+        l3.setBounds(290, 10, 100, 20);
         add(l3);
 
-        JLabel l4 = new JLabel("Price");
-        l4.setBounds(330, 10, 100, 20);
+        JLabel l4 = new JLabel("Job");
+        l4.setBounds(400, 10, 100, 20);
         add(l4);
 
-        JLabel l5 = new JLabel("Bed Type");
-        l5.setBounds(410, 10, 100, 20);
+        JLabel l5 = new JLabel("Salary");
+        l5.setBounds(540, 10, 100, 20);
         add(l5);
 
+        JLabel l6 = new JLabel("Phone");
+        l6.setBounds(670, 10, 100, 20);
+        add(l6);
+
+        JLabel l7 = new JLabel("Email");
+        l7.setBounds(790, 10, 100, 20);
+        add(l7);
+
+        JLabel l8 = new JLabel("Aadhar");
+        l8.setBounds(910, 10, 100, 20);
+        add(l8);
+
         table = new JTable();
-        table.setBounds(0, 40, 500, 400);
+        table.setBounds(0, 40, 1000, 400);
         add(table);
 
         fetchData();
@@ -62,18 +67,18 @@ public class Room extends JFrame implements ActionListener {
         back = new JButton("Back");
         back.setBackground(Color.BLACK);
         back.setForeground(Color.WHITE);
-        back.setBounds(200, 500, 120, 30);
+        back.setBounds(420, 500, 120, 30);
         back.addActionListener(this);
         add(back);
 
         getContentPane().setBackground(Color.WHITE);
-        setBounds(300, 200, 1050, 600);
+        setBounds(300, 200, 1000, 600);
         setVisible(true);
 
     }
 
     public static void main(String[] args) {
-         new Room();
+        new EmployeeInfo();
     }
 
     @Override

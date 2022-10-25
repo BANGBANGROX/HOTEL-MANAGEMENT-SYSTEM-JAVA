@@ -11,7 +11,7 @@ public class Department extends JFrame implements ActionListener {
     private final JTable table;
     private final JButton back;
 
-    private void fetchRoomData() {
+    private void fetchData() {
         try {
             Conn c = new Conn();
             String query = "SELECT * FROM Department";
@@ -38,7 +38,7 @@ public class Department extends JFrame implements ActionListener {
         table.setBounds(0, 50, 700, 350);
         add(table);
 
-        fetchRoomData();
+        fetchData();
 
         back = new JButton("Back");
         back.setBackground(Color.BLACK);

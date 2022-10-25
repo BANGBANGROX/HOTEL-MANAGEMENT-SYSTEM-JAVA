@@ -33,66 +33,77 @@ public class Reception extends JFrame implements ActionListener {
         btnRooms.setBounds(10, 70, 200, 30);
         btnRooms.setBackground(Color.BLACK);
         btnRooms.setForeground(Color.WHITE);
+        btnRooms.addActionListener(this);
         add(btnRooms);
 
         btnDepartments = new JButton("Departments");
         btnDepartments.setBounds(10, 110, 200, 30);
         btnDepartments.setBackground(Color.BLACK);
         btnDepartments.setForeground(Color.WHITE);
+        btnDepartments.addActionListener(this);
         add(btnDepartments);
 
         btnAllEmployees = new JButton("All Employees");
         btnAllEmployees.setBounds(10, 150, 200, 30);
         btnAllEmployees.setBackground(Color.BLACK);
         btnAllEmployees.setForeground(Color.WHITE);
+        btnAllEmployees.addActionListener(this);
         add(btnAllEmployees);
 
         btnCustomers = new JButton("Customers Info");
         btnCustomers.setBounds(10, 190, 200, 30);
         btnCustomers.setBackground(Color.BLACK);
         btnCustomers.setForeground(Color.WHITE);
+        btnCustomers.addActionListener(this);
         add(btnCustomers);
 
         btnManagerInfo = new JButton("Manager Info");
         btnManagerInfo.setBounds(10, 230, 200, 30);
         btnManagerInfo.setBackground(Color.BLACK);
         btnManagerInfo.setForeground(Color.WHITE);
+        btnManagerInfo.addActionListener(this);
         add(btnManagerInfo);
 
         btnCheckOut = new JButton("Check Out");
         btnCheckOut.setBounds(10, 270, 200, 30);
         btnCheckOut.setBackground(Color.BLACK);
         btnCheckOut.setForeground(Color.WHITE);
+        btnCheckOut.addActionListener(this);
         add(btnCheckOut);
 
         btnUpdate = new JButton("Update Status");
         btnUpdate.setBounds(10, 310, 200, 30);
         btnUpdate.setBackground(Color.BLACK);
         btnUpdate.setForeground(Color.WHITE);
+        btnUpdate.addActionListener(this);
         add(btnUpdate);
 
         btnUpdateRoomStatus = new JButton("Update Room Status");
         btnUpdateRoomStatus.setBounds(10, 350, 200, 30);
         btnUpdateRoomStatus.setBackground(Color.BLACK);
         btnUpdateRoomStatus.setForeground(Color.WHITE);
+        btnUpdateRoomStatus.addActionListener(this);
         add(btnUpdateRoomStatus);
 
         btnPickup = new JButton("Pickup Service");
         btnPickup.setBounds(10, 390, 200, 30);
         btnPickup.setBackground(Color.BLACK);
         btnPickup.setForeground(Color.WHITE);
+        btnPickup.addActionListener(this);
         add(btnPickup);
 
         btnSearchRoom = new JButton("Search Room");
         btnSearchRoom.setBounds(10, 430, 200, 30);
         btnSearchRoom.setBackground(Color.BLACK);
         btnSearchRoom.setForeground(Color.WHITE);
+        btnSearchRoom.addActionListener(this);
         add(btnSearchRoom);
 
         btnLogout = new JButton("Logout");
         btnLogout.setBounds(10, 470, 200, 30);
         btnLogout.setBackground(Color.BLACK);
         btnLogout.setForeground(Color.WHITE);
+        btnLogout.addActionListener(this);
         add(btnLogout);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/fourth.jpg"));
@@ -123,6 +134,10 @@ public class Reception extends JFrame implements ActionListener {
 
         if (ae.getSource() == btnDepartments) {
             new Department();
+        }
+
+        if (ae.getSource() == btnAllEmployees) {
+            new EmployeeInfo();
         }
     }
 }
