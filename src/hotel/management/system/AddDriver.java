@@ -203,6 +203,7 @@ public class AddDriver extends JFrame implements ActionListener {
                         name, salary, age, model, company, location, status, gender);
 
                 conn.s.executeUpdate(query);
+                JOptionPane.showMessageDialog(null, "Driver added successfully");
 
                 setVisible(false);
             }

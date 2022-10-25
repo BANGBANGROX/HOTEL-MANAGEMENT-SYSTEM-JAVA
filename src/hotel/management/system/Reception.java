@@ -159,5 +159,9 @@ public class Reception extends JFrame implements ActionListener {
         if (ae.getSource() == btnUpdateRoomStatus) {
             new UpdateRoom();
         }
+
+        if (ae.getSource() == btnPickup) {
+            new PickUp();
+        }
     }
 }
