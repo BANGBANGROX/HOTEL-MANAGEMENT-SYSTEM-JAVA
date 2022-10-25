@@ -139,5 +139,9 @@ public class Reception extends JFrame implements ActionListener {
         if (ae.getSource() == btnAllEmployees) {
             new EmployeeInfo();
         }
+
+        if (ae.getSource() == btnManagerInfo) {
+            new ManagerInfo();
+        }
     }
 }
