@@ -147,5 +147,9 @@ public class Reception extends JFrame implements ActionListener {
         if (ae.getSource() == btnCustomers) {
             new CustomerInfo();
         }
+
+        if (ae.getSource() == btnSearchRoom) {
+            new SearchRoom();
+        }
     }
 }
