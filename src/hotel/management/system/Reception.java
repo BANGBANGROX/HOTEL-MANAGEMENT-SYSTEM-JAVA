@@ -120,5 +120,9 @@ public class Reception extends JFrame implements ActionListener {
         if (ae.getSource() == btnRooms) {
             new Room();
         }
+
+        if (ae.getSource() == btnDepartments) {
+            new Department();
+        }
     }
 }
