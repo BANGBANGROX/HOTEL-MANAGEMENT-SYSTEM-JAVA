@@ -163,5 +163,13 @@ public class Reception extends JFrame implements ActionListener {
         if (ae.getSource() == btnPickup) {
             new PickUp();
         }
+
+        if (ae.getSource() == btnCheckOut) {
+            new CheckOut();
+        }
+
+        if (ae.getSource() == btnLogout) {
+            new HotelManagementSystem();
+        }
     }
 }
